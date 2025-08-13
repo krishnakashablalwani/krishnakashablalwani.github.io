@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    color: #222;
+}
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 48px 0 24px 0;
+    background: linear-gradient(90deg, #89f7fe 0%, #66a6ff 100%);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 4px 24px rgba(102,166,255,0.12);
+}
+.profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 16px rgba(102,166,255,0.15);
+}
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 8px 0;
+    color: #234e70;
+    letter-spacing: 2px;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+}
+header p {
+    font-size: 1.2rem;
+    color: #234e70;
+    margin: 0;
+    font-weight: 500;
+}
+section {
+    background: #fff;
+    padding: 32px;
+    margin: 32px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(35,78,112,0.08);
+    max-width: 700px;
+    transition: box-shadow 0.2s;
+}
+section:hover {
+    box-shadow: 0 8px 32px rgba(35,78,112,0.16);
+}
+h2 {
+    margin-top: 0;
+    color: #66a6ff;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+ul {
+    padding-left: 24px;
+    margin: 0;
+}
+li {
+    margin-bottom: 12px;
+    font-size: 1.08rem;
+}
+strong {
+    color: #234e70;
+}
+.contact a {
+    color: #66a6ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.contact a:hover {
+    color: #234e70;
+    text-decoration: underline;
+}
+@media (max-width: 800px) {
+    section {
+        padding: 18px;
+        margin: 18px 8px;
+        border-radius: 10px;
+        max-width: 98vw;
+    }
+    header {
+        padding: 32px 0 16px 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .profile-img {
+        width: 90px;
+        height: 90px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    li {
+        font-size: 1rem;
+    }
+}
