@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { ChevronDown, ExternalLink, Activity, Target, Cpu, Brain, Award, Mail, Smartphone } from "lucide-react";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import { ChevronDown, ExternalLink, Activity, Target, Cpu, Brain, Award, Mail, Smartphone, Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const Navbar = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     return scrollY.on("change", (latest) => {
@@ -16,23 +17,51 @@ const Navbar = () => {
   }, [scrollY]);
 
   return (
-    <motion.nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'p-6' : 'p-0'}`}
-    >
-      <motion.div 
-        className={`mx-auto flex items-center justify-between transition-all duration-500 ease-in-out backdrop-blur-md bg-black/70 ${isScrolled ? 'max-w-4xl rounded-full px-8 py-4 border border-brand/20' : 'max-w-full px-8 md:px-12 py-6 border-b border-brand/10'}`}
+    <>
+      <motion.nav 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'p-6' : 'p-0'}`}
       >
-        <div className="flex items-center">
-          <img src="/Photo.jpg" alt="Krishna Kashab" className="w-10 h-10 rounded-full border border-brand/50 object-cover shadow-[0_0_15px_rgba(57,162,174,0.3)]" />
-        </div>
-        <div className="flex gap-6 md:gap-8 text-sm font-medium">
-          <a href="#about" className="text-white hover:text-brand transition-colors hidden md:block">About</a>
-          <a href="#projects" className="text-white hover:text-brand transition-colors">Project</a>
-          <a href="#achievements" className="text-white hover:text-brand transition-colors hidden md:block">Achievements</a>
-          <a href="#contact" className="text-white hover:text-brand transition-colors">Contact</a>
-        </div>
-      </motion.div>
-    </motion.nav>
+        <motion.div 
+          className={`mx-auto flex items-center justify-between transition-all duration-500 ease-in-out backdrop-blur-md bg-black/70 ${isScrolled ? 'max-w-4xl rounded-full px-8 py-4 border border-brand/20' : 'max-w-full px-8 md:px-12 py-6 border-b border-brand/10'}`}
+        >
+          <div className="flex items-center">
+            <img src="/Photo.jpg" alt="Krishna Kashab" className="w-10 h-10 rounded-full border border-brand/50 object-cover shadow-[0_0_15px_rgba(57,162,174,0.3)]" />
+          </div>
+          
+          <div className="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#about" className="text-white hover:text-brand transition-colors">About</a>
+            <a href="#projects" className="text-white hover:text-brand transition-colors">Project</a>
+            <a href="#achievements" className="text-white hover:text-brand transition-colors">Achievements</a>
+            <a href="#contact" className="text-white hover:text-brand transition-colors">Contact</a>
+          </div>
+
+          <button 
+            className="md:hidden text-white hover:text-brand transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </motion.div>
+      </motion.nav>
+
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center"
+          >
+            <div className="flex flex-col items-center gap-8 text-2xl font-space font-bold tracking-widest uppercase">
+              <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand transition-colors">About</a>
+              <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand transition-colors">Project</a>
+              <a href="#achievements" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand transition-colors">Achievements</a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand transition-colors">Contact</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
