@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import { ChevronDown, ExternalLink, Activity, Target, Cpu, Brain, Award, Mail, Smartphone, Menu, X } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const Navbar = () => {
   const { scrollY } = useScroll();
@@ -386,6 +386,22 @@ export default function Portfolio() {
             </div>
           </a>
         </div>
+
+        {/* Social Links */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <a href="https://github.com/krishnakashablalwani" target="_blank" rel="noopener noreferrer" className="p-4 md:px-6 rounded-2xl border border-brand/20 bg-black/40 backdrop-blur-lg flex items-center gap-3 hover:border-brand/50 hover:shadow-[0_0_20px_rgba(57,162,174,0.2)] transition-all group">
+            <FaGithub className="w-6 h-6 text-brand" />
+            <span className="text-white font-medium hidden sm:block">GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/krishna-kashab-lalwani" target="_blank" rel="noopener noreferrer" className="p-4 md:px-6 rounded-2xl border border-brand/20 bg-black/40 backdrop-blur-lg flex items-center gap-3 hover:border-brand/50 hover:shadow-[0_0_20px_rgba(57,162,174,0.2)] transition-all group">
+            <FaLinkedin className="w-6 h-6 text-brand" />
+            <span className="text-white font-medium hidden sm:block">LinkedIn</span>
+          </a>
+          <a href="https://www.instagram.com/krishnakashablalwani/" target="_blank" rel="noopener noreferrer" className="p-4 md:px-6 rounded-2xl border border-brand/20 bg-black/40 backdrop-blur-lg flex items-center gap-3 hover:border-brand/50 hover:shadow-[0_0_20px_rgba(57,162,174,0.2)] transition-all group">
+            <FaInstagram className="w-6 h-6 text-brand" />
+            <span className="text-white font-medium hidden sm:block">Instagram</span>
+          </a>
+        </div>
       </section>
 
       {/* Footer */}
@@ -398,6 +414,7 @@ export default function Portfolio() {
           <div className="flex gap-4">
             <a href="https://github.com/krishnakashablalwani" className="text-white/50 hover:text-brand transition-colors"><FaGithub className="w-5 h-5" /></a>
             <a href="https://linkedin.com/in/krishna-kashab-lalwani" className="text-white/50 hover:text-brand transition-colors"><FaLinkedin className="w-5 h-5" /></a>
+            <a href="https://www.instagram.com/krishnakashablalwani/" className="text-white/50 hover:text-brand transition-colors"><FaInstagram className="w-5 h-5" /></a>
           </div>
         </div>
       </footer>
