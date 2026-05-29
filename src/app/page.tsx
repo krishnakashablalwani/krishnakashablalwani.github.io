@@ -138,7 +138,7 @@ export default function Portfolio() {
           
           <div className="h-8 md:h-12 flex items-center justify-center mb-8">
             <p className="text-xl md:text-2xl font-mono text-brand">
-              {text}<span className="animate-pulse">_</span>
+              {text}<span className="animate-pulse" style={{ animationDuration: '0.8s' }}>_</span>
             </p>
           </div>
           
