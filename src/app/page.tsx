@@ -124,7 +124,7 @@ export default function Portfolio() {
             transition={{ delay: 0.2 }}
             className="mb-8 relative flex justify-center items-center"
           >
-            <div className="absolute w-32 h-32 md:w-40 md:h-40 bg-brand/50 rounded-full blur-[60px] animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="absolute w-56 h-56 md:w-72 md:h-72 bg-brand/30 rounded-full blur-[70px] md:blur-[100px] animate-pulse" style={{ animationDuration: '4s' }} />
             <img src="/Photo.jpg" alt="Krishna" className="w-32 h-32 md:w-40 md:h-40 relative z-10 object-cover rounded-full mx-auto border-2 border-brand/40 p-1 shadow-[0_0_30px_rgba(57,162,174,0.2)]" />
           </motion.div>
 
