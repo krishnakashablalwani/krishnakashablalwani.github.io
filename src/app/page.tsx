@@ -111,12 +111,12 @@ export default function Portfolio() {
       />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center relative px-6 pt-20">
+      <section className="min-h-screen flex flex-col items-center justify-center relative px-6 pt-32 pb-12">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="text-center z-10 max-w-4xl"
+          className="text-center z-10 max-w-4xl mt-12 md:mt-0"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
