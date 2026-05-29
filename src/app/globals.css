@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-main: #000000;
+  --color-brand: #39A2AE;
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-panel-bg: rgba(5, 10, 15, 0.4);
+  --color-panel-border: rgba(57, 162, 174, 0.15);
+  --color-panel-hover: rgba(57, 162, 174, 0.3);
+  
+  --font-inter: var(--font-inter);
+  --font-space: var(--font-space);
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(57, 162, 174, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 100% 50%, rgba(57, 162, 174, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space), sans-serif;
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cyber Glow Utilities */
+.glow-text {
+  text-shadow: 0 0 10px rgba(57, 162, 174, 0.5), 0 0 20px rgba(57, 162, 174, 0.3);
+}
+
+.glow-box {
+  box-shadow: 0 0 15px rgba(57, 162, 174, 0.1), inset 0 0 20px rgba(57, 162, 174, 0.05);
+}
+
+.glow-box:hover {
+  box-shadow: 0 0 25px rgba(57, 162, 174, 0.3), inset 0 0 30px rgba(57, 162, 174, 0.1);
+}
