@@ -122,9 +122,10 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mb-8"
+            className="mb-8 relative flex justify-center items-center"
           >
-            <img src="/Photo.jpg" alt="Krishna" className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mx-auto border-2 border-brand/40 p-1 shadow-[0_0_30px_rgba(57,162,174,0.2)]" />
+            <div className="absolute w-32 h-32 md:w-40 md:h-40 bg-brand/50 rounded-full blur-[60px] animate-pulse" style={{ animationDuration: '4s' }} />
+            <img src="/Photo.jpg" alt="Krishna" className="w-32 h-32 md:w-40 md:h-40 relative z-10 object-cover rounded-full mx-auto border-2 border-brand/40 p-1 shadow-[0_0_30px_rgba(57,162,174,0.2)]" />
           </motion.div>
 
           <motion.h1 
