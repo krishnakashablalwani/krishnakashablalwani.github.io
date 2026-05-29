@@ -169,7 +169,7 @@ export default function Portfolio() {
 
         <div className="relative">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-5 sticky top-32">
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
               <FloatingCard delay={0}>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-xl bg-brand/10 text-brand">
